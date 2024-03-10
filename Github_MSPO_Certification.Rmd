@@ -1,0 +1,107 @@
+---
+title: "Oil Palm Growers MY"
+author: "LiyanaZulkipli"
+date: "3/2/2024"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#MSPO Certification
+
+The dataset sourced for the demographic of oil palm growers in Malaysia is taken from [MSPO Trace](https://mspotrace.org.my/Opmc_list). The MSPO Trace is a complete solution to track and trace MSPO Certification, from oil palm plantings and down to the supply chain.
+
+##MS 2530-3:2013 / MSPO Part 3 (2013 version)
+
+**General Principles for Oil Palm Plantations** Part 3 contains requirements used to assess conformity for oil palm estates or plots against the MSPO. This sheet will demonstrate the oil palm plantation that is certified against Part 3 of MSPO standard. 
+
+```{r echo=FALSE}
+library(readxl)
+library(writexl)
+list1 <- read_excel("list1.xlsx")
+print("Fields in the MSPO Trace Dataset")
+colnames(list1)
+```
+
+A glimpse of the columns in the dataset shows the information monitored by the MPOCC including the state and certified area. A further inspection of the dataset found that the Part 3 Certification is a compilation of small plots to big estates. 
+
+The recently developed MSPO standard (2022) has redefined the certification based on the size of certified oil palm area namely:
+
+* MS2530-2-2:2022 - MSPO Part 2-2: General Principles for Organised Smallholders (less than 40.46 hectares). 
+* MS2530-3-1:2022 - MSPO Part 3-1: General Principles for Oil Palm Plantations (40.46 hectares to 500 hectares)
+* MS2530-3-2:2022 - MSPO Part 3-2: General Principles for Oil Palm Plantations (more than 500 hectares). 
+
+The total certified area is calculated for every plot and estate certified with 2013 MSPO Part 3 Certification in each state.
+
+```{r include=FALSE, message=FALSE}
+library(dplyr)
+
+#filter only Part 3 Certificate with selected columns
+Part3 <- list1 %>% 
+  filter(Certification == "Part 3") %>% 
+  select(Certification, `Certified Entity / Cluster`, `Certified Area (Ha)`, State)
+
+#rename column names
+colnames(Part3)[2] = 'Entity'
+colnames(Part3)[3] = 'Area'
+
+```
+
+
+```{r echo=FALSE, message =FALSE}
+
+library(knitr)
+Part3_CertifiedArea <- Part3 %>%
+  group_by(State) %>%
+  summarise(Total_Area = sum(Area)) %>%
+  arrange(desc(Total_Area))
+
+kable(Part3_CertifiedArea, caption = 'Total Certified Area for 2013 MSPO Part 3 Certification', "simple")
+```
+
+
+Characterising the certification into the size of certified area based on the 2022 MSPO standard. 
+
+```{r include=FALSE, message=FALSE}
+Part3_Type <- Part3 %>%
+  mutate(Type = case_when(Area <= 40.46 ~ 'Smallholders with below 40.46 Ha plot - MS2530-2-2',
+                          Area > 40.46 & Area <= 500 ~ 'Growers with 40.46 to 500 Ha estate - MS2530-3-1',
+                          Area > 500 ~ 'Growers with above 500 Ha estate - MS2530-3-2'))
+```
+
+The total certified area for each type of growers can be shown in the dataframe below.
+```{r include=FALSE, message=FALSE}
+Type_State_CertifiedArea <- Part3_Type %>%
+  group_by(Type, State) %>%
+  summarise(Total_Area = sum(Area))
+```
+
+```{r echo=FALSE, message=FALSE}
+kable(Type_State_CertifiedArea, caption = 'Total Certified Area based on the 2022 MSPO standard')
+```
+
+Part 2 Certification for the MSPO 2022 version is only eligible for Smallholder with plantation size of below 40.46 ha. 
+
+```{r echo=FALSE, message=FALSE}
+Part2_CertifiedArea <- Part3_Type %>%
+  group_by(Type) %>%
+  summarise(Total_Area = sum(round(Area, 3)))
+
+cat("Total Certified Area for Part 2 Certification is ", round(Part2_CertifiedArea$Total_Area[3])," Ha")
+
+```
+
+Let's identify the total certified area for Part 3 certification in Malaysia.
+ 
+```{r echo=FALSE, message=FALSE}
+Part3_2022 <- Part3_Type %>%
+  group_by(Type) %>%
+  filter(Type != "Smallholders with below 40.46 Ha plot - MS2530-2-2") %>%
+  summarise(Total_Area = sum(round(Area, 3)))
+
+Certification <- Part3_2022$Type
+kable(Part3_2022, caption = 'Total Certified Area for 2022 MSPO Part 3 Certification')
+```
