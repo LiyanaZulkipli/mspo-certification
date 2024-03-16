@@ -1,0 +1,11 @@
+---
+name: "Demographic of oil palm growers in Malaysia"
+output_dir: "MSPO"
+navbar:
+  title: "MSPO Certification"
+  left:
+  - text: "Code chunks"
+    href: Github_MSPO_Certification_Code.html
+output:
+  html_document:
+    theme: cosmo
