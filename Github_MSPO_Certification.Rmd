@@ -1,11 +1,5 @@
 ---
 title: "Oil Palm Growers MY"
-author: "LiyanaZulkipli"
-knit: (function(input_file, encoding) {
-    out_dir <- 'docs2';
-    rmarkdown::render(input_file,
-      encoding=encoding,
-      output_file=file.path(dirname(input_file), out_dir, 'MSPO_Certification.html'))})
 ---
 
 
