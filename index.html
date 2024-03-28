@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Liyana Zulkipli" />
+
+
+<title>Oil Palm Growers with plantation above 40.46 hectares in Malaysia</title>
+
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">MSPO Certification</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="Github_MSPO_Certification_Code.html">Code chunks</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Oil Palm Growers with plantation above 40.46 hectares in Malaysia</h1>
+<h4 class="author">Liyana Zulkipli</h4>
+
+</div>
+
+
+<div id="mspo-certification" class="section level1">
+<h1>MSPO Certification</h1>
+<p>The dataset sourced for the demographic of oil palm growers in Malaysia is taken from <a href="https://mspotrace.org.my/Opmc_list">MSPO Trace</a>. The MSPO Trace is a complete solution to track and trace MSPO Certification, from oil palm plantings and down to the supply chain.</p>
+<div id="ms-2530-32013-mspo-part-3-2013-version" class="section level2">
+<h2>MS 2530-3:2013 / MSPO Part 3 (2013 version)</h2>
+<p><strong>General Principles for Oil Palm Plantations</strong> Part 3 contains requirements used to assess conformity for oil palm estates or plots against the MSPO. This sheet will demonstrate the oil palm plantation that is certified against Part 3 of MSPO standard.</p>
+<pre><code>## [1] &quot;Fields in the MSPO Trace Dataset&quot;</code></pre>
+<pre><code>##  [1] &quot;Track.No&quot;                   &quot;Certification Body&quot;        
+##  [3] &quot;Certification&quot;              &quot;Parent Company&quot;            
+##  [5] &quot;Company&quot;                    &quot;Certified Entity / Cluster&quot;
+##  [7] &quot;MPOB Code&quot;                  &quot;No of Smallholders&quot;        
+##  [9] &quot;State&quot;                      &quot;Certified Area (Ha)&quot;       
+## [11] &quot;Certified Capacity(MT/Hr)&quot;  &quot;Audit Stage&quot;               
+## [13] &quot;MSPO Certification No&quot;      &quot;Issue.Date&quot;                
+## [15] &quot;Exp.Date&quot;                   &quot;Status&quot;</code></pre>
+<p>A glimpse of the columns in the dataset shows the information monitored by the MPOCC including the state and certified area. A further inspection of the dataset found that the Part 3 Certification is a compilation of small plots to big estates.</p>
+<p>The recently developed MSPO standard (2022) has redefined the certification based on the size of certified oil palm area namely:</p>
+<ul>
+<li>MS2530-2-2:2022 - MSPO Part 2-2: General Principles for Organised Smallholders (less than 40.46 hectares).</li>
+<li>MS2530-3-1:2022 - MSPO Part 3-1: General Principles for Oil Palm Plantations (40.46 hectares to 500 hectares)</li>
+<li>MS2530-3-2:2022 - MSPO Part 3-2: General Principles for Oil Palm Plantations (more than 500 hectares).</li>
+</ul>
+<p>The total certified area is calculated for every plot and estate certified with 2013 MSPO Part 3 Certification in each state.</p>
+<table>
+<caption>Total Certified Area for 2013 MSPO Part 3 Certification</caption>
+<thead>
+<tr class="header">
+<th align="left">State</th>
+<th align="right">Total_Area</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Sarawak</td>
+<td align="right">1667021.612</td>
+</tr>
+<tr class="even">
+<td align="left">Sabah</td>
+<td align="right">1514453.326</td>
+</tr>
+<tr class="odd">
+<td align="left">Pahang</td>
+<td align="right">698956.280</td>
+</tr>
+<tr class="even">
+<td align="left">Johor</td>
+<td align="right">542443.112</td>
+</tr>
+<tr class="odd">
+<td align="left">Perak</td>
+<td align="right">286945.583</td>
+</tr>
+<tr class="even">
+<td align="left">Kelantan</td>
+<td align="right">198221.571</td>
+</tr>
+<tr class="odd">
+<td align="left">Terengganu</td>
+<td align="right">171785.943</td>
+</tr>
+<tr class="even">
+<td align="left">Negeri Sembilan</td>
+<td align="right">166307.048</td>
+</tr>
+<tr class="odd">
+<td align="left">Selangor</td>
+<td align="right">95748.818</td>
+</tr>
+<tr class="even">
+<td align="left">Kedah</td>
+<td align="right">72703.522</td>
+</tr>
+<tr class="odd">
+<td align="left">Melaka</td>
+<td align="right">47964.003</td>
+</tr>
+<tr class="even">
+<td align="left">Pulau Pinang</td>
+<td align="right">2024.629</td>
+</tr>
+<tr class="odd">
+<td align="left">Perlis</td>
+<td align="right">1121.786</td>
+</tr>
+</tbody>
+</table>
+<p>Characterising the certification into the size of certified area based on the 2022 MSPO standard.</p>
+<p>The total certified area for each type of growers can be shown in the dataframe below.</p>
+<table>
+<caption>Total Certified Area based on the 2022 MSPO standard</caption>
+<colgroup>
+<col width="62%" />
+<col width="20%" />
+<col width="16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Type</th>
+<th align="left">State</th>
+<th align="right">Total_Area</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Growers with 40.46 to 500 Ha estate - MS2530-3-1</td>
+<td align="left">Johor</td>
+<td align="right">43863.1053</td>
+</tr>
+<tr class="even">
+<td align="left">Growers with 40.46 to 500 Ha estate - MS2530-3-1</td>
+<td align="left">Kedah</td>
+<td align="right">16874.5801</td>
+</tr>
+<tr class="odd">
+<td align="left">Growers with 40.46 to 500 Ha estate - MS2530-3-1</td>
+<td align="left">Kelantan</td>
+<td align="right">16153.7039</td>
+</tr>
+<tr class="even">
+<td align="left">Growers with 40.46 to 500 Ha estate - MS2530-3-1</td>
+<td align="left">Melaka</td>
+<td align="right">12682.4434</td>
+</tr>
+<tr class="odd">
+<td align="left">Growers with 40.46 to 500 Ha estate - MS2530-3-1</td>
+<td align="left">Negeri Sembilan</td>
+<td align="right">22569.5244</td>
+</tr>
+<tr class="even">
+<td align="left">Growers with 40.46 to 500 Ha estate - MS2530-3-1</td>
+<td align="left">Pahang</td>
+<td align="right">37704.5513</td>
+</tr>
+<tr class="odd">
+<td align="left">Growers with 40.46 to 500 Ha estate - MS2530-3-1</td>
+<td align="left">Perak</td>
+<td align="right">55781.1914</td>
+</tr>
+<tr class="even">
+<td align="left">Growers with 40.46 to 500 Ha estate - MS2530-3-1</td>
+<td align="left">Perlis</td>
+<td align="right">589.6600</td>
+</tr>
+<tr class="odd">
+<td align="left">Growers with 40.46 to 500 Ha estate - MS2530-3-1</td>
+<td align="left">Pulau Pinang</td>
+<td align="right">2024.6290</td>
+</tr>
+<tr class="even">
+<td align="left">Growers with 40.46 to 500 Ha estate - MS2530-3-1</td>
+<td align="left">Sabah</td>
+<td align="right">181596.4841</td>
+</tr>
+<tr class="odd">
+<td align="left">Growers with 40.46 to 500 Ha estate - MS2530-3-1</td>
+<td align="left">Sarawak</td>
+<td align="right">58602.4460</td>
+</tr>
+<tr class="even">
+<td align="left">Growers with 40.46 to 500 Ha estate - MS2530-3-1</td>
+<td align="left">Selangor</td>
+<td align="right">15499.1077</td>
+</tr>
+<tr class="odd">
+<td align="left">Growers with 40.46 to 500 Ha estate - MS2530-3-1</td>
+<td align="left">Terengganu</td>
+<td align="right">8577.0347</td>
+</tr>
+<tr class="even">
+<td align="left">Growers with above 500 Ha estate - MS2530-3-2</td>
+<td align="left">Johor</td>
+<td align="right">498319.5967</td>
+</tr>
+<tr class="odd">
+<td align="left">Growers with above 500 Ha estate - MS2530-3-2</td>
+<td align="left">Kedah</td>
+<td align="right">55800.3560</td>
+</tr>
+<tr class="even">
+<td align="left">Growers with above 500 Ha estate - MS2530-3-2</td>
+<td align="left">Kelantan</td>
+<td align="right">182039.3964</td>
+</tr>
+<tr class="odd">
+<td align="left">Growers with above 500 Ha estate - MS2530-3-2</td>
+<td align="left">Melaka</td>
+<td align="right">35113.0055</td>
+</tr>
+<tr class="even">
+<td align="left">Growers with above 500 Ha estate - MS2530-3-2</td>
+<td align="left">Negeri Sembilan</td>
+<td align="right">143620.3330</td>
+</tr>
+<tr class="odd">
+<td align="left">Growers with above 500 Ha estate - MS2530-3-2</td>
+<td align="left">Pahang</td>
+<td align="right">661134.1889</td>
+</tr>
+<tr class="even">
+<td align="left">Growers with above 500 Ha estate - MS2530-3-2</td>
+<td align="left">Perak</td>
+<td align="right">231043.0847</td>
+</tr>
+<tr class="odd">
+<td align="left">Growers with above 500 Ha estate - MS2530-3-2</td>
+<td align="left">Perlis</td>
+<td align="right">532.1260</td>
+</tr>
+<tr class="even">
+<td align="left">Growers with above 500 Ha estate - MS2530-3-2</td>
+<td align="left">Sabah</td>
+<td align="right">1331969.9510</td>
+</tr>
+<tr class="odd">
+<td align="left">Growers with above 500 Ha estate - MS2530-3-2</td>
+<td align="left">Sarawak</td>
+<td align="right">1608138.0463</td>
+</tr>
+<tr class="even">
+<td align="left">Growers with above 500 Ha estate - MS2530-3-2</td>
+<td align="left">Selangor</td>
+<td align="right">80215.7300</td>
+</tr>
+<tr class="odd">
+<td align="left">Growers with above 500 Ha estate - MS2530-3-2</td>
+<td align="left">Terengganu</td>
+<td align="right">163208.9080</td>
+</tr>
+<tr class="even">
+<td align="left">Smallholders with below 40.46 Ha plot - MS2530-2-2</td>
+<td align="left">Johor</td>
+<td align="right">260.4100</td>
+</tr>
+<tr class="odd">
+<td align="left">Smallholders with below 40.46 Ha plot - MS2530-2-2</td>
+<td align="left">Kedah</td>
+<td align="right">28.5856</td>
+</tr>
+<tr class="even">
+<td align="left">Smallholders with below 40.46 Ha plot - MS2530-2-2</td>
+<td align="left">Kelantan</td>
+<td align="right">28.4705</td>
+</tr>
+<tr class="odd">
+<td align="left">Smallholders with below 40.46 Ha plot - MS2530-2-2</td>
+<td align="left">Melaka</td>
+<td align="right">168.5544</td>
+</tr>
+<tr class="even">
+<td align="left">Smallholders with below 40.46 Ha plot - MS2530-2-2</td>
+<td align="left">Negeri Sembilan</td>
+<td align="right">117.1910</td>
+</tr>
+<tr class="odd">
+<td align="left">Smallholders with below 40.46 Ha plot - MS2530-2-2</td>
+<td align="left">Pahang</td>
+<td align="right">117.5400</td>
+</tr>
+<tr class="even">
+<td align="left">Smallholders with below 40.46 Ha plot - MS2530-2-2</td>
+<td align="left">Perak</td>
+<td align="right">121.3064</td>
+</tr>
+<tr class="odd">
+<td align="left">Smallholders with below 40.46 Ha plot - MS2530-2-2</td>
+<td align="left">Sabah</td>
+<td align="right">886.8910</td>
+</tr>
+<tr class="even">
+<td align="left">Smallholders with below 40.46 Ha plot - MS2530-2-2</td>
+<td align="left">Sarawak</td>
+<td align="right">281.1200</td>
+</tr>
+<tr class="odd">
+<td align="left">Smallholders with below 40.46 Ha plot - MS2530-2-2</td>
+<td align="left">Selangor</td>
+<td align="right">33.9800</td>
+</tr>
+</tbody>
+</table>
+<p>Part 2 Certification for the MSPO 2022 version is only eligible for Smallholder with plantation size of below 40.46 ha.</p>
+<pre><code>## Total Certified Area for Part 2 Certification is  2044  Ha</code></pre>
+<p>Let's identify the total certified area for Part 3 certification in Malaysia.</p>
+<table>
+<caption>Total Certified Area for 2022 MSPO Part 3 Certification</caption>
+<thead>
+<tr class="header">
+<th align="left">Type</th>
+<th align="right">Total_Area</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Growers with 40.46 to 500 Ha estate - MS2530-3-1</td>
+<td align="right">472518.5</td>
+</tr>
+<tr class="even">
+<td align="left">Growers with above 500 Ha estate - MS2530-3-2</td>
+<td align="right">4991134.7</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
